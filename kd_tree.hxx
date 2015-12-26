@@ -40,9 +40,6 @@ class kd_tree {
         int     nKey;
         const int FEATS_PER_BIN;
         std::vector<feature> feat_list;
-        std::priority_queue<mq_node,
-                            std::vector<mq_node>,
-                            mq_node_comparator> mq;
 
         void set_partition(kd_node *);
         void divide_kd_node(kd_node *);

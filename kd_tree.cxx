@@ -137,6 +137,9 @@ int
 kd_tree::bbf_search(const feature &feat, const int MAX_EXPLORE)
 {
     std::list<int> nhbrs;
+    std::priority_queue<mq_node, 
+        std::vector<mq_node>, 
+        mq_node_comparator> mq;
 
     mq.push( mq_node(root, 0.0) );
     float minDist=FLT_MAX;
