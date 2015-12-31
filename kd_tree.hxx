@@ -47,7 +47,7 @@ class kd_tree {
         void divide_kd_node(kd_node *);
 
     public : 
-        kd_tree(std::vector<feature> feat_list,gint nKey);
+        kd_tree(std::vector<feature> feat_list, int nKey);
         int bbf_search(const feature &feat, const int M=5); 
 };
 
