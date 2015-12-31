@@ -1,7 +1,4 @@
-#ifndef KD_TREE
-#define KD_TREE
 #include "kd_tree.hxx"
-#endif
 
 #include <list>
 #include <vector>
@@ -37,9 +34,7 @@ mq_node::mq_node(kd_node *node, float dist)
     this->dist = dist;
 }
 
-kd_tree::kd_tree(std::vector<feature> feat_list, int nKey, 
-                 const int F)
-: FEATS_PER_BIN(F)
+kd_tree::kd_tree(std::vector<feature> feat_list, int nKey)
 {
     this->nKey = nKey;
     if (feat_list.size() == 0) {
@@ -63,7 +58,7 @@ kd_tree::kd_tree(std::vector<feature> feat_list, int nKey,
 void 
 kd_tree::divide_kd_node(kd_node *node)
 {
-    if (node->idx_list.size() <= FEATS_PER_BIN) {
+    if (node->idx_list.size() <= 1) {
         return;
     }
 

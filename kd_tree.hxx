@@ -1,3 +1,6 @@
+#ifndef KD_TREE_H
+#define KD_TREE_H
+
 #include <list>
 #include <queue>
 #include <vector>
@@ -38,14 +41,15 @@ class kd_tree {
     private :
         kd_node *root;
         int     nKey;
-        const int FEATS_PER_BIN;
         std::vector<feature> feat_list;
 
         void set_partition(kd_node *);
         void divide_kd_node(kd_node *);
 
     public : 
-        kd_tree(std::vector<feature> feat_list, 
-                int nKey, const int F=1);
+        kd_tree(std::vector<feature> feat_list,gint nKey);
         int bbf_search(const feature &feat, const int M=5); 
 };
+
+
+#endif
