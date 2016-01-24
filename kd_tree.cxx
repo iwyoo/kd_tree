@@ -40,7 +40,6 @@ kd_tree::kd_tree(std::vector<feature> feat_list, int nKey)
     if (feat_list.size() == 0) {
         std::cerr << "feat_list size must be larger than 0" << std::endl;
         exit(EXIT_FAILURE);
-        return;
     }
     if (nKey == 0) {
         std::cerr << "nKey must be larger than 0" << std::endl;
